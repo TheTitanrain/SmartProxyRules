@@ -1,18 +1,21 @@
 # SmartProxyRules
 
+[![Generate GFWList](https://github.com/YOUR_USERNAME/SmartProxyRules/actions/workflows/generate-gfwlist.yml/badge.svg)](https://github.com/YOUR_USERNAME/SmartProxyRules/actions/workflows/generate-gfwlist.yml)
+
 Генератор AutoProxy/GFWList для расширения [SmartProxy](https://github.com/salarcode/SmartProxy).
 
 ## Описание
 
-Этот репозиторий содержит скрипт для автоматической генерации списка прокси-правил в формате AutoProxy/GFWList из настроек SmartProxy и дополнительных доменов.
+Этот репозиторий содержит скрипт для автоматической генерации списка прокси-правил в формате AutoProxy/GFWList из настроек SmartProxy и дополнительных доменов. GitHub Actions автоматически обновляет список при изменении правил.
 
 ## Файлы
 
-- **SmartProxyRules.json** - Экспортированные настройки из SmartProxy
+- **SmartProxyRules.json** - Экспортированные настройки из расширения SmartProxy
 - **domains.txt** - Дополнительные домены (один домен на строку)
-- **generate_gfwlist.py** - Скрипт генерации GFWList
-- **gfwlist.txt** - Сгенерированный список правил (AutoProxy формат)
+- **generate_gfwlist.py** - Python скрипт для генерации GFWList
+- **gfwlist.txt** - Сгенерированный список правил (AutoProxy формат) ⭐
 - **gfwlist.base64.txt** - Base64-кодированная версия списка
+- **.github/workflows/generate-gfwlist.yml** - GitHub Actions workflow для автоматической генерации
 
 ## Использование
 
@@ -68,6 +71,13 @@ https://raw.githubusercontent.com/ВАШ_ЮЗЕРНЕЙМ/SmartProxyRules/main/g
 ```
 
 Где `||domain.com` означает проксирование домена и всех его поддоменов.
+
+## Как это работает
+
+1. **Экспортируйте настройки SmartProxy** → Сохраните как `SmartProxyRules.json`
+2. **Добавьте свои домены** → Отредактируйте `domains.txt` (опционально)
+3. **Отправьте в GitHub** → GitHub Actions автоматически сгенерирует `gfwlist.txt`
+4. **Подпишитесь в SmartProxy** → Используйте raw URL из GitHub
 
 ## Лицензия
 
