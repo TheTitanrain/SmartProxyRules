@@ -1,0 +1,2 @@
+openai.com
+studio.google.com
