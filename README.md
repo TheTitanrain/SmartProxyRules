@@ -18,6 +18,17 @@ This repository contains a script for automatically generating proxy rule lists 
 
 ### 1. Generate rule list
 
+#### Automatic generation (GitHub Actions)
+
+Whenever `SmartProxyRules.json` or `domains.txt` is changed, GitHub Actions automatically generates new `gfwlist.txt` and `gfwlist.base64.txt` files.
+
+You can also trigger it manually:
+1. Go to the Actions tab in the repository
+2. Select "Generate GFWList"
+3. Click "Run workflow"
+
+#### Local generation
+
 ```bash
 python generate_gfwlist.py
 ```
@@ -29,10 +40,22 @@ The script:
 
 ### 2. Use in SmartProxy
 
-1. Upload `gfwlist.txt` to a web server or GitHub Pages
-2. In SmartProxy, go to "Smart Proxy" profile settings
-3. Add a Rules Subscription
-4. Specify the URL of your gfwlist.txt
+Use the direct link to gfwlist.txt from GitHub:
+
+```
+https://raw.githubusercontent.com/YOUR_USERNAME/SmartProxyRules/main/gfwlist.txt
+```
+
+Or for the base64 version:
+
+```
+https://raw.githubusercontent.com/YOUR_USERNAME/SmartProxyRules/main/gfwlist.base64.txt
+```
+
+In SmartProxy:
+1. Go to "Smart Proxy" profile settings
+2. Add a Rules Subscription
+3. Specify the URL of your file
 
 ## AutoProxy/GFWList Format
 

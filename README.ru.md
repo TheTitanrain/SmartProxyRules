@@ -18,6 +18,17 @@
 
 ### 1. Генерация списка правил
 
+#### Автоматическая генерация (GitHub Actions)
+
+При каждом изменении `SmartProxyRules.json` или `domains.txt` GitHub Actions автоматически генерирует новые файлы `gfwlist.txt` и `gfwlist.base64.txt`.
+
+Также можно запустить вручную:
+1. Перейдите во вкладку Actions в репозитории
+2. Выберите "Generate GFWList"
+3. Нажмите "Run workflow"
+
+#### Локальная генерация
+
 ```bash
 python generate_gfwlist.py
 ```
@@ -29,10 +40,22 @@ python generate_gfwlist.py
 
 ### 2. Использование в SmartProxy
 
-1. Загрузите `gfwlist.txt` на веб-сервер или GitHub Pages
-2. В SmartProxy перейдите в настройки профиля "Умный прокси"
-3. Добавьте подписку на правила (Rules Subscription)
-4. Укажите URL вашего gfwlist.txt
+Используйте прямую ссылку на gfwlist.txt из GitHub:
+
+```
+https://raw.githubusercontent.com/ВАШ_ЮЗЕРНЕЙМ/SmartProxyRules/main/gfwlist.txt
+```
+
+Или для base64 версии:
+
+```
+https://raw.githubusercontent.com/ВАШ_ЮЗЕРНЕЙМ/SmartProxyRules/main/gfwlist.base64.txt
+```
+
+В SmartProxy:
+1. Перейдите в настройки профиля "Умный прокси"
+2. Добавьте подписку на правила (Rules Subscription)
+3. Укажите URL вашего файла
 
 ## Формат AutoProxy/GFWList
 
