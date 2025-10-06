@@ -1,0 +1,2 @@
+# SmartProxyRules
+SmartProxy Configuration files.
