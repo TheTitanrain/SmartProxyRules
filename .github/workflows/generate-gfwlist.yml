@@ -7,8 +7,11 @@ on:
     paths:
       - 'SmartProxyRules.json'
       - 'domains.txt'
+      - 'inside-raw.lst'
       - 'generate_gfwlist.py'
   workflow_dispatch:  # Allow manual trigger
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC to check for updates
 
 jobs:
   generate:
@@ -23,19 +26,24 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Download inside-raw.lst
+        run: |
+          curl -sSL https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Russia/inside-raw.lst -o inside-raw.lst
+          echo "Downloaded inside-raw.lst ($(wc -l < inside-raw.lst) lines)"
+
       - name: Generate GFWList
         run: python generate_gfwlist.py
 
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet gfwlist.txt gfwlist.base64.txt || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet gfwlist.txt gfwlist.base64.txt inside-raw.lst || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
         if: steps.check_changes.outputs.changed == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add gfwlist.txt gfwlist.base64.txt
+          git add gfwlist.txt gfwlist.base64.txt inside-raw.lst
           git commit -m "Auto-generate GFWList files"
           git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/TheTitanrain/SmartProxyRules.git HEAD:main
