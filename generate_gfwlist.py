@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 AutoProxy/GFWList Generator for SmartProxy
-Extracts domains from SmartProxyRules.json and domains.txt
+Extracts domains from SmartProxyRules.json, domains.txt, and inside-raw.lst
 and generates a GFWList format file.
 """
 
@@ -95,6 +95,7 @@ def main():
     # Input files
     json_file = script_dir / 'SmartProxyRules.json'
     txt_file = script_dir / 'domains.txt'
+    inside_raw_file = script_dir / 'inside-raw.lst'
 
     # Output file
     output_file = script_dir / 'gfwlist.txt'
@@ -112,8 +113,13 @@ def main():
     txt_domains = extract_domains_from_txt(txt_file)
     print(f'   Found {len(txt_domains)} domains')
 
+    # Extract domains from inside-raw.lst
+    print(f'\nReading {inside_raw_file.name}...')
+    inside_raw_domains = extract_domains_from_txt(inside_raw_file)
+    print(f'   Found {len(inside_raw_domains)} domains')
+
     # Combine and deduplicate
-    all_domains = json_domains | txt_domains
+    all_domains = json_domains | txt_domains | inside_raw_domains
     print(f'\nTotal unique domains: {len(all_domains)}')
 
     # Generate GFWList
