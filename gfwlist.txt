@@ -1,7 +1,7 @@
 [AutoProxy 0.2.9]
 ! Title: SmartProxy Rules
-! Last Modified: 2026-01-25 00:07:46
-! Total Rules: 1157
+! Last Modified: 2026-01-26 00:07:45
+! Total Rules: 1169
 ! Homepage: https://github.com/salarcode/SmartProxy
 
 ||.ua
@@ -28,6 +28,7 @@
 ||adobe.com
 ||ads-twitter.com
 ||adultmult.tv
+||affinity.studio
 ||agents.media
 ||ahrefs.com
 ||ai-chat.bsg.brave.com
@@ -37,6 +38,7 @@
 ||aistudio.google.com
 ||ajay.app
 ||akc.org
+||all3dp.com
 ||allegro.pl
 ||alphacoders.com
 ||alza.hu
@@ -295,7 +297,7 @@
 ||eutrp.eu
 ||everand.com
 ||exchanger.bits.media
-||exler.ru
+||exler.es
 ||expandrive.com
 ||expres.online
 ||extremetech.com
@@ -375,7 +377,6 @@
 ||glavred.info
 ||glavred.net
 ||global.fncstatic.com
-||global.platform.seconddinnertech.com
 ||glpals.com
 ||godaddy.com
 ||gofile.io
@@ -550,6 +551,7 @@
 ||lostfilmtv2.site
 ||lu4.org
 ||lucid.app
+||lyst.com
 ||magaz.global
 ||mail-api.proton.me
 ||mailerlite.com
@@ -585,6 +587,7 @@
 ||metal-archives.com
 ||metla.press
 ||metopera.org
+||mezha.net
 ||microsoft.com
 ||middlewareinventory.com
 ||mignews.com
@@ -675,6 +678,7 @@
 ||obozrevatel.com
 ||ocbase.com
 ||ocstore.com
+||octopus.do
 ||oculus.com
 ||ohmyswift.ru
 ||oi.legal
@@ -748,6 +752,7 @@
 ||pravda.com
 ||pravda.com.ua
 ||premierleague.com
+||primark.com
 ||primevideo.com
 ||primevue.org
 ||privatekeys.pw
@@ -756,6 +761,7 @@
 ||production-openaicom-storage.azureedge.net
 ||proekt.media
 ||profitwell.com
+||pronouns.page
 ||prosleduetmedia.com
 ||prostovpn.org
 ||proton.me
@@ -871,6 +877,7 @@
 ||se.com
 ||searchfloor.org
 ||seasonvar.ru
+||seconddinnertech.com
 ||selezen.org
 ||semnasem.org
 ||semrush.com
@@ -907,6 +914,7 @@
 ||smartbear.com
 ||smartdeploy.com
 ||sms-activate.io
+||snapgametech.com
 ||snapgene.com
 ||sndcdn.com
 ||snort.org
@@ -982,6 +990,7 @@
 ||theguardian.com
 ||theins.press
 ||theins.ru
+||themoscowtimes.com
 ||themoviedb.org
 ||thepiratebay.org
 ||theporndude.com
@@ -1056,6 +1065,8 @@
 ||ukdevilz.com
 ||ukr.net
 ||ukr.radio
+||ukrainer.net
+||ukrinform.net
 ||ukrtelcdn.net
 ||unian.ua
 ||unscreen.com
@@ -1118,6 +1129,7 @@
 ||wpengine.com
 ||wunderground.com
 ||www3.corsair.com
+||x-minus.pro
 ||x.ai
 ||x.com
 ||xhamster.com
