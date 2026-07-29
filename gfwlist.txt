@@ -1,6 +1,6 @@
 [AutoProxy 0.2.9]
 ! Title: SmartProxy Rules
-! Last Modified: 2026-07-28 01:28:56
+! Last Modified: 2026-07-29 01:29:16
 ! Total Rules: 1223
 ! Homepage: https://github.com/salarcode/SmartProxy
 
